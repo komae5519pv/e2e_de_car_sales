@@ -587,3 +587,4 @@ LEFT JOIN monthly_sales s
 -- MAGIC 次は <code>03_SDPパイプライン設定手順</code> の手順に従って、Databricks UI からこのファイルをソースに指定して<br>
 -- MAGIC <b>パイプラインを作成 → 実行</b> します。実行すると DAG（依存関係グラフ）と Expectations の違反件数が UI で確認できます。
 -- MAGIC </div>
+
