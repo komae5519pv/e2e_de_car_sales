@@ -1,0 +1,1247 @@
+{
+  "datasets": [
+    {
+      "name": "mv_sales_kpi",
+      "displayName": "mv_sales_kpi",
+      "asset_name": "komae_demo_v4.used_car_e2e_demo.mv_sales_kpi"
+    }
+  ],
+  "pages": [
+    {
+      "name": "bfc4dd98",
+      "displayName": "経営サマリー",
+      "layout": [
+        {
+          "widget": {
+            "name": "kpi_revenue",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "mv_sales_kpi",
+                  "fields": [
+                    {
+                      "name": "契約年月",
+                      "expression": "`契約年月`"
+                    },
+                    {
+                      "name": "measure(売上合計)",
+                      "expression": "MEASURE(`売上合計`)"
+                    }
+                  ],
+                  "disaggregated": false,
+                  "orders": [
+                    {
+                      "direction": "DESC",
+                      "expression": "`契約年月`"
+                    }
+                  ]
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "frame": {
+                "title": "売上合計",
+                "showTitle": true
+              },
+              "widgetType": "counter",
+              "encodings": {
+                "value": {
+                  "fieldName": "measure(売上合計)",
+                  "format": {
+                    "type": "number-plain",
+                    "abbreviation": "none",
+                    "decimalPlaces": {
+                      "type": "exact",
+                      "places": 0
+                    }
+                  },
+                  "displayName": "売上合計"
+                },
+                "target": {
+                  "fieldName": "measure(売上合計)",
+                  "period": {
+                    "type": "relative-to-value-period",
+                    "offset": -2
+                  },
+                  "change": {
+                    "type": "percent"
+                  },
+                  "displayName": "前月比"
+                },
+                "period": {
+                  "fieldName": "契約年月"
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 3,
+            "height": 3
+          }
+        },
+        {
+          "widget": {
+            "name": "kpi_contracts",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "mv_sales_kpi",
+                  "fields": [
+                    {
+                      "name": "契約年月",
+                      "expression": "`契約年月`"
+                    },
+                    {
+                      "name": "measure(契約件数)",
+                      "expression": "MEASURE(`契約件数`)"
+                    }
+                  ],
+                  "disaggregated": false,
+                  "orders": [
+                    {
+                      "direction": "DESC",
+                      "expression": "`契約年月`"
+                    }
+                  ]
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "frame": {
+                "title": "契約件数",
+                "showTitle": true
+              },
+              "widgetType": "counter",
+              "encodings": {
+                "value": {
+                  "fieldName": "measure(契約件数)",
+                  "format": {
+                    "type": "number-plain",
+                    "abbreviation": "none",
+                    "decimalPlaces": {
+                      "type": "exact",
+                      "places": 0
+                    }
+                  },
+                  "displayName": "契約件数"
+                },
+                "target": {
+                  "fieldName": "measure(契約件数)",
+                  "period": {
+                    "type": "relative-to-value-period",
+                    "offset": -2
+                  },
+                  "change": {
+                    "type": "percent"
+                  },
+                  "displayName": "前月比"
+                },
+                "period": {
+                  "fieldName": "契約年月"
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 3,
+            "y": 0,
+            "width": 3,
+            "height": 3
+          }
+        },
+        {
+          "widget": {
+            "name": "kpi_margin",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "mv_sales_kpi",
+                  "fields": [
+                    {
+                      "name": "契約年月",
+                      "expression": "`契約年月`"
+                    },
+                    {
+                      "name": "measure(加重平均粗利率)",
+                      "expression": "MEASURE(`加重平均粗利率`)"
+                    }
+                  ],
+                  "disaggregated": false,
+                  "orders": [
+                    {
+                      "direction": "DESC",
+                      "expression": "`契約年月`"
+                    }
+                  ]
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "frame": {
+                "title": "粗利率",
+                "showTitle": true
+              },
+              "widgetType": "counter",
+              "encodings": {
+                "value": {
+                  "fieldName": "measure(加重平均粗利率)",
+                  "format": {
+                    "type": "number-percent",
+                    "decimalPlaces": {
+                      "type": "exact",
+                      "places": 2
+                    }
+                  },
+                  "displayName": "粗利率"
+                },
+                "target": {
+                  "fieldName": "measure(加重平均粗利率)",
+                  "period": {
+                    "type": "relative-to-value-period",
+                    "offset": -2
+                  },
+                  "change": {
+                    "type": "percent"
+                  },
+                  "displayName": "前月比"
+                },
+                "period": {
+                  "fieldName": "契約年月"
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 6,
+            "y": 0,
+            "width": 3,
+            "height": 3
+          }
+        },
+        {
+          "widget": {
+            "name": "kpi_arpu",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "mv_sales_kpi",
+                  "fields": [
+                    {
+                      "name": "契約年月",
+                      "expression": "`契約年月`"
+                    },
+                    {
+                      "name": "measure(顧客あたり売上)",
+                      "expression": "MEASURE(`顧客あたり売上`)"
+                    }
+                  ],
+                  "disaggregated": false,
+                  "orders": [
+                    {
+                      "direction": "DESC",
+                      "expression": "`契約年月`"
+                    }
+                  ]
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "frame": {
+                "title": "顧客あたり売上",
+                "showTitle": true
+              },
+              "widgetType": "counter",
+              "encodings": {
+                "value": {
+                  "fieldName": "measure(顧客あたり売上)",
+                  "format": {
+                    "type": "number-plain",
+                    "abbreviation": "none",
+                    "decimalPlaces": {
+                      "type": "exact",
+                      "places": 0
+                    }
+                  },
+                  "displayName": "顧客あたり売上"
+                },
+                "target": {
+                  "fieldName": "measure(顧客あたり売上)",
+                  "period": {
+                    "type": "relative-to-value-period",
+                    "offset": -2
+                  },
+                  "change": {
+                    "type": "percent"
+                  },
+                  "displayName": "前月比"
+                },
+                "period": {
+                  "fieldName": "契約年月"
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 9,
+            "y": 0,
+            "width": 3,
+            "height": 3
+          }
+        },
+        {
+          "widget": {
+            "name": "trend_monthly",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "mv_sales_kpi",
+                  "fields": [
+                    {
+                      "name": "契約年月",
+                      "expression": "`契約年月`"
+                    },
+                    {
+                      "name": "measure(売上合計)",
+                      "expression": "MEASURE(`売上合計`)"
+                    },
+                    {
+                      "name": "measure(粗利合計)",
+                      "expression": "MEASURE(`粗利合計`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "frame": {
+                "showTitle": true,
+                "title": "月次売上・粗利推移"
+              },
+              "widgetType": "line",
+              "encodings": {
+                "x": {
+                  "fieldName": "契約年月",
+                  "axis": {
+                    "title": ""
+                  },
+                  "scale": {
+                    "type": "temporal"
+                  }
+                },
+                "y": {
+                  "fields": [
+                    {
+                      "fieldName": "measure(売上合計)",
+                      "displayName": "売上"
+                    },
+                    {
+                      "fieldName": "measure(粗利合計)",
+                      "displayName": "粗利"
+                    }
+                  ],
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "format": {
+                    "type": "number-currency",
+                    "abbreviation": "compact",
+                    "currencyCode": "JPY"
+                  }
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 3,
+            "width": 8,
+            "height": 5
+          }
+        },
+        {
+          "widget": {
+            "name": "pie_bodytype",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "mv_sales_kpi",
+                  "fields": [
+                    {
+                      "name": "measure(売上合計)",
+                      "expression": "MEASURE(`売上合計`)"
+                    },
+                    {
+                      "name": "ボディタイプ",
+                      "expression": "`ボディタイプ`"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "frame": {
+                "showTitle": true,
+                "title": "ボディタイプ別売上構成"
+              },
+              "widgetType": "pie",
+              "encodings": {
+                "angle": {
+                  "fieldName": "measure(売上合計)",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "displayName": "売上合計"
+                },
+                "color": {
+                  "fieldName": "ボディタイプ",
+                  "displayName": "ボディタイプ",
+                  "scale": {
+                    "type": "categorical",
+                    "sort": {
+                      "by": "angle-reversed"
+                    }
+                  }
+                },
+                "label": {
+                  "show": true
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 8,
+            "y": 3,
+            "width": 4,
+            "height": 5
+          }
+        },
+        {
+          "widget": {
+            "name": "bar_store_rank",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "mv_sales_kpi",
+                  "fields": [
+                    {
+                      "name": "店舗名",
+                      "expression": "`店舗名`"
+                    },
+                    {
+                      "name": "measure(売上合計)",
+                      "expression": "MEASURE(`売上合計`)"
+                    },
+                    {
+                      "name": "measure(粗利合計)",
+                      "expression": "MEASURE(`粗利合計`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "frame": {
+                "showTitle": true,
+                "title": "店舗別売上ランキング"
+              },
+              "mark": {
+                "layout": "group"
+              },
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "店舗名",
+                  "displayName": "店舗",
+                  "scale": {
+                    "type": "categorical",
+                    "sort": {
+                      "by": "y-reversed"
+                    }
+                  }
+                },
+                "y": {
+                  "fields": [
+                    {
+                      "fieldName": "measure(売上合計)",
+                      "displayName": "売上"
+                    },
+                    {
+                      "fieldName": "measure(粗利合計)",
+                      "displayName": "粗利"
+                    }
+                  ],
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "format": {
+                    "type": "number-currency",
+                    "abbreviation": "compact",
+                    "currencyCode": "JPY"
+                  }
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 8,
+            "width": 12,
+            "height": 5
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_CANVAS",
+      "layoutVersion": "GRID_V1"
+    },
+    {
+      "name": "store_analysis",
+      "displayName": "店舗分析",
+      "layout": [
+        {
+          "widget": {
+            "name": "store_table",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "mv_sales_kpi",
+                  "fields": [
+                    {
+                      "name": "店舗名",
+                      "expression": "`店舗名`"
+                    },
+                    {
+                      "name": "都道府県",
+                      "expression": "`都道府県`"
+                    },
+                    {
+                      "name": "店舗業態",
+                      "expression": "`店舗業態`"
+                    },
+                    {
+                      "name": "measure(契約件数)",
+                      "expression": "MEASURE(`契約件数`)"
+                    },
+                    {
+                      "name": "measure(売上合計)",
+                      "expression": "MEASURE(`売上合計`)"
+                    },
+                    {
+                      "name": "measure(粗利合計)",
+                      "expression": "MEASURE(`粗利合計`)"
+                    },
+                    {
+                      "name": "measure(加重平均粗利率)",
+                      "expression": "MEASURE(`加重平均粗利率`)"
+                    },
+                    {
+                      "name": "measure(平均販売価格)",
+                      "expression": "MEASURE(`平均販売価格`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "frame": {
+                "showTitle": true,
+                "title": "店舗パフォーマンス一覧"
+              },
+              "widgetType": "table",
+              "encodings": {
+                "columns": [
+                  {
+                    "fieldName": "店舗名",
+                    "displayName": "店舗名"
+                  },
+                  {
+                    "fieldName": "都道府県",
+                    "displayName": "都道府県"
+                  },
+                  {
+                    "fieldName": "店舗業態",
+                    "displayName": "業態"
+                  },
+                  {
+                    "fieldName": "measure(契約件数)",
+                    "format": {
+                      "type": "number-plain",
+                      "abbreviation": "none"
+                    },
+                    "displayName": "契約件数"
+                  },
+                  {
+                    "fieldName": "measure(売上合計)",
+                    "format": {
+                      "type": "number-currency",
+                      "abbreviation": "compact",
+                      "currencyCode": "JPY"
+                    },
+                    "displayName": "売上合計"
+                  },
+                  {
+                    "fieldName": "measure(粗利合計)",
+                    "format": {
+                      "type": "number-currency",
+                      "abbreviation": "compact",
+                      "currencyCode": "JPY"
+                    },
+                    "displayName": "粗利合計"
+                  },
+                  {
+                    "fieldName": "measure(加重平均粗利率)",
+                    "format": {
+                      "type": "number-percent",
+                      "decimalPlaces": {
+                        "type": "exact",
+                        "places": 1
+                      }
+                    },
+                    "displayName": "粗利率"
+                  },
+                  {
+                    "fieldName": "measure(平均販売価格)",
+                    "format": {
+                      "type": "number-currency",
+                      "abbreviation": "compact",
+                      "currencyCode": "JPY"
+                    },
+                    "displayName": "平均単価"
+                  }
+                ]
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 12,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "bar_prefecture",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "mv_sales_kpi",
+                  "fields": [
+                    {
+                      "name": "都道府県",
+                      "expression": "`都道府県`"
+                    },
+                    {
+                      "name": "measure(売上合計)",
+                      "expression": "MEASURE(`売上合計`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "frame": {
+                "showTitle": true,
+                "title": "都道府県別売上"
+              },
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "都道府県",
+                  "displayName": "都道府県",
+                  "scale": {
+                    "type": "categorical",
+                    "sort": {
+                      "by": "y-reversed"
+                    }
+                  }
+                },
+                "y": {
+                  "fieldName": "measure(売上合計)",
+                  "format": {
+                    "type": "number-currency",
+                    "abbreviation": "compact",
+                    "currencyCode": "JPY"
+                  },
+                  "displayName": "売上",
+                  "scale": {
+                    "type": "quantitative"
+                  }
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 6,
+            "width": 6,
+            "height": 5
+          }
+        },
+        {
+          "widget": {
+            "name": "bar_format",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "mv_sales_kpi",
+                  "fields": [
+                    {
+                      "name": "店舗業態",
+                      "expression": "`店舗業態`"
+                    },
+                    {
+                      "name": "measure(売上合計)",
+                      "expression": "MEASURE(`売上合計`)"
+                    },
+                    {
+                      "name": "measure(粗利合計)",
+                      "expression": "MEASURE(`粗利合計`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "frame": {
+                "showTitle": true,
+                "title": "店舗業態別比較"
+              },
+              "mark": {
+                "layout": "group"
+              },
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "店舗業態",
+                  "displayName": "業態",
+                  "scale": {
+                    "type": "categorical",
+                    "sort": {
+                      "by": "y-reversed"
+                    }
+                  }
+                },
+                "y": {
+                  "fields": [
+                    {
+                      "fieldName": "measure(売上合計)",
+                      "displayName": "売上"
+                    },
+                    {
+                      "fieldName": "measure(粗利合計)",
+                      "displayName": "粗利"
+                    }
+                  ],
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "format": {
+                    "type": "number-currency",
+                    "abbreviation": "compact",
+                    "currencyCode": "JPY"
+                  }
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 6,
+            "y": 6,
+            "width": 6,
+            "height": 5
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_CANVAS",
+      "layoutVersion": "GRID_V1"
+    },
+    {
+      "name": "vehicle_analysis",
+      "displayName": "車両・商品分析",
+      "layout": [
+        {
+          "widget": {
+            "name": "bar_bodytype",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "mv_sales_kpi",
+                  "fields": [
+                    {
+                      "name": "ボディタイプ",
+                      "expression": "`ボディタイプ`"
+                    },
+                    {
+                      "name": "measure(売上合計)",
+                      "expression": "MEASURE(`売上合計`)"
+                    },
+                    {
+                      "name": "measure(粗利合計)",
+                      "expression": "MEASURE(`粗利合計`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "frame": {
+                "showTitle": true,
+                "title": "ボディタイプ別売上・粗利"
+              },
+              "mark": {
+                "layout": "group"
+              },
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "ボディタイプ",
+                  "displayName": "ボディタイプ",
+                  "scale": {
+                    "type": "categorical",
+                    "sort": {
+                      "by": "y-reversed"
+                    }
+                  }
+                },
+                "y": {
+                  "fields": [
+                    {
+                      "fieldName": "measure(売上合計)",
+                      "displayName": "売上"
+                    },
+                    {
+                      "fieldName": "measure(粗利合計)",
+                      "displayName": "粗利"
+                    }
+                  ],
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "format": {
+                    "type": "number-currency",
+                    "abbreviation": "compact",
+                    "currencyCode": "JPY"
+                  }
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 6,
+            "height": 5
+          }
+        },
+        {
+          "widget": {
+            "name": "bar_maker",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "mv_sales_kpi",
+                  "fields": [
+                    {
+                      "name": "メーカー",
+                      "expression": "`メーカー`"
+                    },
+                    {
+                      "name": "measure(契約件数)",
+                      "expression": "MEASURE(`契約件数`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "frame": {
+                "showTitle": true,
+                "title": "メーカー別契約件数"
+              },
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "メーカー",
+                  "displayName": "メーカー",
+                  "scale": {
+                    "type": "categorical",
+                    "sort": {
+                      "by": "y-reversed"
+                    }
+                  }
+                },
+                "y": {
+                  "fieldName": "measure(契約件数)",
+                  "displayName": "契約件数",
+                  "scale": {
+                    "type": "quantitative"
+                  }
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 6,
+            "y": 0,
+            "width": 6,
+            "height": 5
+          }
+        },
+        {
+          "widget": {
+            "name": "bar_year_cat",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "mv_sales_kpi",
+                  "fields": [
+                    {
+                      "name": "年式区分",
+                      "expression": "`年式区分`"
+                    },
+                    {
+                      "name": "measure(売上合計)",
+                      "expression": "MEASURE(`売上合計`)"
+                    },
+                    {
+                      "name": "measure(契約件数)",
+                      "expression": "MEASURE(`契約件数`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "frame": {
+                "showTitle": true,
+                "title": "年式区分別売上"
+              },
+              "mark": {
+                "layout": "group"
+              },
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "年式区分",
+                  "displayName": "年式区分",
+                  "scale": {
+                    "type": "categorical",
+                    "sort": {
+                      "by": "custom-order",
+                      "orderedValues": [
+                        "3年以内",
+                        "4-7年",
+                        "8-10年",
+                        "10年超"
+                      ]
+                    }
+                  }
+                },
+                "y": {
+                  "fields": [
+                    {
+                      "fieldName": "measure(売上合計)",
+                      "displayName": "売上"
+                    },
+                    {
+                      "fieldName": "measure(契約件数)",
+                      "displayName": "件数"
+                    }
+                  ],
+                  "scale": {
+                    "type": "quantitative"
+                  }
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 5,
+            "width": 6,
+            "height": 5
+          }
+        },
+        {
+          "widget": {
+            "name": "bar_certified",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "mv_sales_kpi",
+                  "fields": [
+                    {
+                      "name": "認定中古車",
+                      "expression": "`認定中古車`"
+                    },
+                    {
+                      "name": "measure(売上合計)",
+                      "expression": "MEASURE(`売上合計`)"
+                    },
+                    {
+                      "name": "measure(平均販売価格)",
+                      "expression": "MEASURE(`平均販売価格`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "frame": {
+                "showTitle": true,
+                "title": "認定中古車比較"
+              },
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "認定中古車",
+                  "displayName": "認定区分",
+                  "scale": {
+                    "type": "categorical"
+                  }
+                },
+                "y": {
+                  "fields": [
+                    {
+                      "fieldName": "measure(売上合計)",
+                      "displayName": "売上"
+                    },
+                    {
+                      "fieldName": "measure(平均販売価格)",
+                      "displayName": "平均単価"
+                    }
+                  ],
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "format": {
+                    "type": "number-currency",
+                    "abbreviation": "compact",
+                    "currencyCode": "JPY"
+                  }
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 6,
+            "y": 5,
+            "width": 6,
+            "height": 5
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_CANVAS",
+      "layoutVersion": "GRID_V1"
+    },
+    {
+      "name": "global_filters",
+      "displayName": "Global Filters",
+      "layout": [
+        {
+          "widget": {
+            "name": "filter_date",
+            "queries": [
+              {
+                "name": "dashboards/01f14db1fa3e1fc2adf7541a38854ca7/datasets/01f14db2300916fda4039bd46f2ca074_契約年月",
+                "query": {
+                  "datasetName": "mv_sales_kpi",
+                  "fields": [
+                    {
+                      "name": "契約年月",
+                      "expression": "`契約年月`"
+                    },
+                    {
+                      "name": "契約年月_associativity",
+                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "frame": {
+                "title": "契約年月",
+                "showTitle": true
+              },
+              "widgetType": "filter-date-range-picker",
+              "encodings": {
+                "fields": [
+                  {
+                    "fieldName": "契約年月",
+                    "queryName": "dashboards/01f14db1fa3e1fc2adf7541a38854ca7/datasets/01f14db2300916fda4039bd46f2ca074_契約年月"
+                  }
+                ]
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 4,
+            "height": 1
+          }
+        },
+        {
+          "widget": {
+            "name": "filter_pref",
+            "queries": [
+              {
+                "name": "dashboards/01f14db1fa3e1fc2adf7541a38854ca7/datasets/01f14db2300916fda4039bd46f2ca074_都道府県",
+                "query": {
+                  "datasetName": "mv_sales_kpi",
+                  "fields": [
+                    {
+                      "name": "都道府県",
+                      "expression": "`都道府県`"
+                    },
+                    {
+                      "name": "都道府県_associativity",
+                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "scale": {
+                "type": "categorical",
+                "sort": {
+                  "by": "natural-order"
+                }
+              },
+              "frame": {
+                "title": "都道府県",
+                "showTitle": true
+              },
+              "widgetType": "filter-multi-select",
+              "encodings": {
+                "fields": [
+                  {
+                    "fieldName": "都道府県",
+                    "queryName": "dashboards/01f14db1fa3e1fc2adf7541a38854ca7/datasets/01f14db2300916fda4039bd46f2ca074_都道府県"
+                  }
+                ]
+              }
+            }
+          },
+          "position": {
+            "x": 4,
+            "y": 0,
+            "width": 4,
+            "height": 1
+          }
+        },
+        {
+          "widget": {
+            "name": "filter_format",
+            "queries": [
+              {
+                "name": "dashboards/01f14db1fa3e1fc2adf7541a38854ca7/datasets/01f14db2300916fda4039bd46f2ca074_店舗業態",
+                "query": {
+                  "datasetName": "mv_sales_kpi",
+                  "fields": [
+                    {
+                      "name": "店舗業態",
+                      "expression": "`店舗業態`"
+                    },
+                    {
+                      "name": "店舗業態_associativity",
+                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "scale": {
+                "type": "categorical",
+                "sort": {
+                  "by": "natural-order"
+                }
+              },
+              "frame": {
+                "title": "店舗業態",
+                "showTitle": true
+              },
+              "widgetType": "filter-multi-select",
+              "encodings": {
+                "fields": [
+                  {
+                    "fieldName": "店舗業態",
+                    "queryName": "dashboards/01f14db1fa3e1fc2adf7541a38854ca7/datasets/01f14db2300916fda4039bd46f2ca074_店舗業態"
+                  }
+                ]
+              }
+            }
+          },
+          "position": {
+            "x": 8,
+            "y": 0,
+            "width": 4,
+            "height": 1
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_GLOBAL_FILTERS",
+      "layoutVersion": "GRID_V1"
+    }
+  ],
+  "uiSettings": {
+    "theme": {
+      "widgetHeaderAlignment": "ALIGNMENT_UNSPECIFIED"
+    },
+    "genieSpace": {
+      "isEnabled": true,
+      "overrideId": "01f14cdbd06b1a59bbac6590cf5eae7f",
+      "enablementMode": "ENABLED"
+    },
+    "applyModeEnabled": false
+  }
+}
